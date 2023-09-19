@@ -8,14 +8,15 @@
         body {
             font-family: Arial, sans-serif;
             margin: auto;
-            width: 1170px;
-            height: 2532px;
+            width: 100%;  /* Change this */
+            max-width: 1170px;  /* Add this */
             text-align: center;
             position: relative;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         img {
-            width: 300px; /* Adjust based on your needs */
+            width: 100%; /* Make it responsive */
+            max-width: 300px; /* Adjust based on your needs */
             display: block;
             margin: 20px auto;
         }
@@ -27,12 +28,14 @@
         }
         .inputs-container {
             display: flex;
+            flex-wrap: wrap;  /* Add this for wrapping */
             justify-content: space-between;
             margin: 20px 0;
         }
         .input-column {
             flex: 1;
             padding: 0 10px;
+            margin-bottom: 10px; /* Added for spacing */
         }
         button {
             padding: 10px 20px;
@@ -46,6 +49,13 @@
         }
         button:hover {
             background-color: #45a049;
+        }
+
+        /* Media query for small screens */
+        @media only screen and (max-width: 768px) {
+            .input-column {
+                flex-basis: 100%; /* Take the full width on smaller screens */
+            }
         }
     </style>
 </head>
